@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+<body style="background-color:AliceBlue ;"></body>
+
+<h2 style="text-align:center ; color:red" > <ins>  2018 FIFA WORLD CUP POLL SYSTEM !! </ins> </h2>
+
+<style>
+div.scrollmenu {
+    background-color: #333;
+    overflow: auto;
+    white-space: nowrap;
+}
+
+div.scrollmenu a {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px;
+    text-decoration: none;
+}
+
+div.scrollmenu a:hover {
+    background-color: #F0FFFF;
+}
+</style>
+</head>
+<body>
+
+<div class="scrollmenu">
+  <center>
+  <a href="/">Home</a>
+  <a href = "http://127.0.0.1:8000/poll/index/"> Poll Questions</a>
+  <a href = "poll/topscorer">Top Goal Scorers</a>
+  <a href = "poll/history"> History of FIFA WORLD CUP Winners</a>
+  <a href="http://127.0.0.1:8000/poll/login/">LOGIN</a>
+  </center>
+    </div>
+<p>
+
+<img src = "https://www.united-states-flag.com/media/catalog/product/cache/2/image/9df78eab33525d08d6e5fb8d27136e95/f/l/flgtbnr1000031929_-00_fifa-world-cup-team-brazil-banner-flag.jpg" width = "180px" height = "200px" align ="left">
+<img src = "https://cdn.shopify.com/s/files/1/1363/4521/products/1_cf969527-a3a4-4404-8821-50c6cc4ab73d_1024x1024.jpg?v=1468957618" width = "190px" height = "220px" align ="right">
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {box-sizing:border-box}
+body {font-family: Verdana,sans-serif;}
+.mySlides {display:none}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 900px;
+  position: relative;
+  margin: auto;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  height: 13px;
+  width: 13px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 700px) {
+  .text {font-size: 11px}
+}
+</style>
+</head>
+<body>
+
+<div class="slideshow-container">
+
+<div class="mySlides fade">
+  <div class="numbertext">1 / 4</div>
+  <img src="http://img.fifa.com/images/fwc/2018/opengraph/generic.png" style="width:100%">
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">2 / 4</div>
+  <img src="http://img.fifa.com/mm/photo/tournament/competition/02/23/87/72/2238772_big-lnd.jpg" style="width:100%">
+  
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">3 / 4</div>
+  <img src="http://img.fifa.com/mm/photo/tournament/competition/02/40/53/48/2405348_xbig-lnd.jpg" style="width:100%">
+  
+</div>
+
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+   
+</div>
+
+<script>
+var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("dot");
+    for (i = 0; i < slides.length; i++) {
+       slides[i].style.display = "none";  
+    }
+    slideIndex++;
+    if (slideIndex> slides.length) {slideIndex = 1}    
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";  
+    dots[slideIndex-1].className += " active";
+    setTimeout(showSlides, 3000); // Change image every 3 seconds
+}
+</script>
+
+</body>
+</html> 
+

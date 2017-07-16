@@ -1,0 +1,62 @@
+{% extends "poll/mainbase.html" %}
+{% block content %}
+    <h3>Total poll question: {{ count.questionCount }} || Total Choices: {{ count.choiceCount }} || Total Votes: {{ count.totalVotes }}</h3>
+    <hr>
+    
+    <td>
+         <form action="" method="post" enctype="multipart/form-data">{% csrf_token %}
+    {{ form.status }} <input type="submit" value="Filter" name="_save" id="shownow" title="Select List of Available Filters">
+    </form>
+    </td>
+        <td>
+            <input type="button" value="ADD New POLL"
+               onclick="location.href='{% url 'poll:add_poll' %}'"
+               title="Add New Poll Question"/>
+        </td>
+    </tr>
+    </table>
+
+
+    <hr>
+    <div style="margin-left:150px;">
+    {% if questions %}
+        <ul xmlns="http://www.w3.org/1999/html" style="width:1000px">
+            {% for question in questions %}
+                <li>      {{ question.id }} --
+                    <a href="{% url 'poll:detail' question.id %}">{{ question.question_text }} --
+                        <small>
+                            <u>
+                                {{ total.question.id }}
+                                {% for key,values in total.items %}
+                                    {% if question.id == key %}
+                                        Total-Votes:<b>{{ values }}</b>
+                                    {% endif %}
+                                {% endfor %}
+                            </u></small>
+                        -- {{ question.pub_date|date }}
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No polls are available.</p>
+    {% endif %}
+    <br/>
+    {% if searchResult %}
+        <hr>
+        <p>Search Results: </p>
+        {% for result in searchResult %}
+            <ul>
+            <li>{{ result}}</li>
+            </ul>
+        {% endfor %}
+    {% else %}
+        <hr>
+        <p>No Results Found.</p>
+    {% endif %}
+    </div>
+
+    <hr>
+    <div id="chart-1" style="border:1px solid #efefef">{{ output|safe }}</div>
+
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends "poll/mainbase.html" %}
+{% block content %}
+    <h3>Total poll question: {{ count.questionCount }} || Total Choices: {{ count.choiceCount }} || Total Votes: {{ count.totalVotes }}</h3>
+    <hr>
+        <td>
+            <input type="button" value="ADD New POLL"
+               onclick="location.href='{% url 'poll:add_poll' %}'"
+               title="Add New Poll Question"/>
+        </td>
+    </tr>
+    </table>
+
+
+    <hr>
+    <div style="margin-left:150px;">
+    {% if questions %}
+        <ul xmlns="http://www.w3.org/1999/html" style="width:1000px">
+            {% for question in questions %}
+                <li>  
+                    {{ question.question_text }} 
+                       
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No polls are available.</p>
+    {% endif %}
+    <br/>
+    </div>
+    <hr>
+    <div id="chart-1" style="border:1px solid #efefef">{{ output|safe }}</div>
+
+{% endblock %}

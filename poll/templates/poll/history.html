@@ -1,0 +1,36 @@
+
+<h1><center>History of world cup winners</center></h1>
+<img src = "http://www.fifa.com/mm/photo/tournament/competition/01/70/11/09/1701109_full-prt.jpg" width = "320px" height = "450px" align ="left">
+<img src = "https://s-media-cache-ak0.pinimg.com/736x/de/d6/ec/ded6ec23c9f7c542d1d681aa6f09157b.jpg" width = "320px" height = "450px" align ="right">
+<body bgcolor="	#DCDCDC">
+<center>
+<table border=5 cellspacing=0>
+
+      <tr>
+        <td><b><center>Host</center></b>
+        </td>
+         <td>
+          <b><center>Winner</center></b></td>
+        <td>
+          <b><center>Score</center></b>
+        </td>
+              
+      </tr>
+      {% for i in lists %}
+      <tr>
+        <td>
+          {{ i.Host }}
+        </td>
+        <td>
+          {{i.Winner}}
+        
+        </td>
+        <td>
+          {{i.Score}}
+        
+        </td>
+      </tr>
+      {% endfor %}
+    </table>
+
+</center>
